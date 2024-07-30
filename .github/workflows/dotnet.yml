@@ -17,7 +17,7 @@ jobs:
           dotnet-version: '8.0.x' # SDK Version to use.
           source-url: https://nuget.pkg.github.com/ittennull/index.json
         env:
-          NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NUGET_AUTH_TOKEN: ${{secrets.NUGETORG_TOKEN}}
       - run: dotnet build --configuration Release TestNuget/TestNuget.csproj
       - name: Create the package
         run: dotnet pack --configuration Release TestNuget/TestNuget.csproj
